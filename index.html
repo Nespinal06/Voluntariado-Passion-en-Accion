@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscripción de Voluntarios – Pasión en Acción | Espresso Americano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brown: #4E2C0D;
+    --brown-light: #6B3D14;
+    --gold: #C8922A;
+    --gold-light: #FDF3E3;
+    --gold-mid: #F5E0B8;
+    --cream: #FBF7F0;
+    --text: #1A1007;
+    --text-muted: #6B5C4E;
+    --border: #E0D5C8;
+    --border-focus: #C8922A;
+    --white: #FFFFFF;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+    line-height: 1.6;
+  }
+
+  .page-wrap { max-width: 680px; margin: 0 auto; }
+
+  /* Header */
+  .form-header {
+    background: var(--brown);
+    border-radius: var(--radius);
+    padding: 2rem 2rem 1.75rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(200,146,42,0.12);
+  }
+  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 1rem; }
+  .logo-mark {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark i { font-size: 22px; color: var(--brown); }
+  .header-brand { display: flex; flex-direction: column; }
+  .brand-name { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+  .brand-dept { font-size: 11px; color: rgba(253,243,227,0.55); margin-top: 1px; }
+  .header-title { font-size: 22px; font-weight: 600; color: var(--gold-light); line-height: 1.3; }
+  .header-sub { font-size: 13px; color: rgba(253,243,227,0.65); margin-top: 4px; }
+  .header-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.25rem; }
+  .pill {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(200,146,42,0.18);
+    border: 0.5px solid rgba(200,146,42,0.35);
+    border-radius: 99px; padding: 4px 10px;
+    font-size: 11px; color: var(--gold-mid);
+  }
+  .pill i { font-size: 13px; }
+
+  /* Cards */
+  .section-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .section-head {
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 0.875rem;
+    margin-bottom: 1.125rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    width: 30px; height: 30px; border-radius: var(--radius-sm);
+    background: var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-icon i { font-size: 16px; color: var(--gold); }
+  .section-head h2 { font-size: 14px; font-weight: 600; color: var(--brown); }
+
+  /* Fields */
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .field-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .field-row.full { grid-template-columns: 1fr; }
+  .field-row:last-child { margin-bottom: 0; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field label { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+  .req { color: var(--gold); margin-left: 2px; }
+
+  input[type="text"], input[type="email"], input[type="tel"],
+  select, textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus,
+  select:focus, textarea:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(200,146,42,0.12);
+  }
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B5C4E' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 30px; cursor: pointer; }
+  textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+  ::placeholder { color: #B8A898; }
+
+  /* Checkboxes */
+  .check-group { display: flex; flex-direction: column; gap: 10px; }
+  .check-item { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); transition: background 0.12s, border-color 0.12s; }
+  .check-item:hover { background: var(--cream); }
+  .check-item:has(input:checked) { background: var(--gold-light); border-color: var(--gold); }
+  .check-item input[type="checkbox"] { margin-top: 2px; accent-color: var(--gold); width: 15px; height: 15px; flex-shrink: 0; cursor: pointer; }
+  .check-label { font-size: 13px; font-weight: 500; color: var(--text); }
+  .check-desc { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Radio pills */
+  .radio-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .radio-pill { display: flex; align-items: center; gap: 6px; padding: 7px 14px; border: 1px solid var(--border); border-radius: 99px; cursor: pointer; font-size: 13px; color: var(--text-muted); transition: all 0.12s; }
+  .radio-pill:hover { border-color: var(--gold); color: var(--brown); }
+  .radio-pill:has(input:checked) { background: var(--gold-light); border-color: var(--gold); color: var(--brown); font-weight: 500; }
+  .radio-pill input { accent-color: var(--gold); width: 13px; height: 13px; }
+
+  /* Availability grid */
+  .avail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .avail-card { display: flex; align-items: flex-start; gap: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.12s; }
+  .avail-card:hover { background: var(--cream); }
+  .avail-card:has(input:checked) { background: var(--gold-light); border-color: var(--gold); }
+  .avail-card input { margin-top: 2px; accent-color: var(--gold); width: 14px; height: 14px; flex-shrink: 0; }
+  .avail-card span { font-size: 13px; color: var(--text); line-height: 1.4; }
+
+  /* Info note */
+  .info-note { display: flex; gap: 10px; background: var(--gold-light); border: 1px solid var(--gold-mid); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 14px; }
+  .info-note i { font-size: 16px; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+  .info-note p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* Sublabel */
+  .sub-label { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; }
+
+  /* Consent */
+  .consent-block { display: flex; align-items: flex-start; gap: 12px; background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .consent-block input { margin-top: 3px; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+  .consent-block p { font-size: 12px; color: var(--text-muted); line-height: 1.65; }
+
+  /* Submit */
+  .btn-submit {
+    width: 100%; background: var(--brown); color: var(--gold-light);
+    border: none; border-radius: var(--radius);
+    padding: 14px 24px; font-size: 15px; font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-submit:hover { background: var(--brown-light); }
+  .btn-submit:active { transform: scale(0.99); }
+  .btn-submit i { font-size: 18px; }
+
+  /* Success */
+  #success { display: none; text-align: center; padding: 3rem 2rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); }
+  .success-ring { width: 72px; height: 72px; border-radius: 50%; background: var(--gold-light); border: 2px solid var(--gold-mid); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; }
+  .success-ring i { font-size: 36px; color: var(--gold); }
+  #success h2 { font-size: 20px; font-weight: 600; color: var(--brown); margin-bottom: 0.5rem; }
+  #success p { font-size: 14px; color: var(--text-muted); line-height: 1.7; max-width: 380px; margin: 0 auto; }
+
+  /* Footer */
+  .page-footer { text-align: center; margin-top: 2rem; font-size: 11px; color: #B8A898; }
+  .page-footer strong { color: var(--text-muted); }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .field-row, .field-row.three { grid-template-columns: 1fr; }
+    .avail-grid { grid-template-columns: 1fr; }
+    .form-header { padding: 1.5rem; }
+    .header-title { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="form-header">
+    <div class="header-top">
+      <div class="logo-mark"><i class="ti ti-heart-handshake"></i></div>
+      <div class="header-brand">
+        <span class="brand-name">Espresso Americano</span>
+        <span class="brand-dept">Comunicaciones y Responsabilidad Social Empresarial</span>
+      </div>
+    </div>
+    <h1 class="header-title">Inscripción al Programa de Voluntariado</h1>
+    <p class="header-sub">Programa "Pasión en Acción" — Únete y genera impacto en tu comunidad</p>
+    <div class="header-pills">
+      <span class="pill"><i class="ti ti-heart"></i> Salud</span>
+      <span class="pill"><i class="ti ti-book"></i> Educación</span>
+      <span class="pill"><i class="ti ti-leaf"></i> Medio Ambiente</span>
+      <span class="pill"><i class="ti ti-bulb"></i> Pro-Bono</span>
+    </div>
+  </div>
+
+  <form id="vol-form" novalidate>
+
+    <!-- 1. Datos personales -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-user"></i></div>
+        <h2>Datos personales</h2>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Nombres <span class="req">*</span></label>
+          <input type="text" id="nombres" placeholder="Ej. María José" required>
+        </div>
+        <div class="field">
+          <label>Apellidos <span class="req">*</span></label>
+          <input type="text" id="apellidos" placeholder="Ej. López Ramos" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Número de identidad / empleado <span class="req">*</span></label>
+          <input type="text" placeholder="Ej. 0801-1990-12345" required>
+        </div>
+        <div class="field">
+          <label>Correo electrónico corporativo <span class="req">*</span></label>
+          <input type="email" placeholder="nombre@espressoamericano.com" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Teléfono / celular <span class="req">*</span></label>
+          <input type="tel" placeholder="+504 9999-0000" required>
+        </div>
+        <div class="field">
+          <label>Talla de camisa <span class="req">*</span></label>
+          <select required>
+            <option value="" disabled selected>Seleccionar talla</option>
+            <option>XS</option><option>S</option><option>M</option>
+            <option>L</option><option>XL</option><option>XXL</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Información laboral -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-building-store"></i></div>
+        <h2>Información laboral</h2>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Área / Departamento <span class="req">*</span></label>
+          <select required>
+            <option value="" disabled selected>Seleccionar área</option>
+            <option>Comunicaciones y RSE</option>
+            <option>Recursos Humanos</option>
+            <option>Finanzas y Contabilidad</option>
+            <option>Mercadeo</option>
+            <option>Operaciones</option>
+            <option>Tecnología</option>
+            <option>Legal</option>
+            <option>Gerencia General</option>
+            <option>Otra</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Puesto de trabajo <span class="req">*</span></label>
+          <input type="text" placeholder="Ej. Analista de Marketing" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Tienda / Sede de trabajo <span class="req">*</span></label>
+          <input type="text" placeholder="Ej. Sede Central, Sucursal Mall Multiplaza" required>
+        </div>
+        <div class="field">
+          <label>Nombre del supervisor directo <span class="req">*</span></label>
+          <input type="text" placeholder="Ej. Carlos Mendoza" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Áreas de interés -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-heart"></i></div>
+        <h2>Áreas de interés</h2>
+      </div>
+      <p class="sub-label" style="margin-bottom:12px;">Selecciona las áreas en las que te gustaría participar (puedes elegir varias).</p>
+      <div class="check-group">
+        <label class="check-item">
+          <input type="checkbox">
+          <div><div class="check-label">❤ Salud</div><div class="check-desc">Brigadas médicas, donación de sangre, concientización en salud y bienestar</div></div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <div><div class="check-label">📚 Educación</div><div class="check-desc">Entrega de kits escolares, mejoras en infraestructura, charlas motivacionales</div></div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <div><div class="check-label">🌿 Medio Ambiente</div><div class="check-desc">Reforestación, limpieza comunitaria, educación ambiental</div></div>
+        </label>
+        <label class="check-item">
+          <input type="checkbox">
+          <div><div class="check-label">💡 Voluntariado Pro-Bono</div><div class="check-desc">Aportar mis conocimientos y habilidades profesionales al servicio de la comunidad</div></div>
+        </label>
+      </div>
+    </div>
+
+    <!-- 4. Habilidades pro-bono -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-bulb"></i></div>
+        <h2>Habilidades para voluntariado pro-bono</h2>
+      </div>
+      <div class="info-note">
+        <i class="ti ti-info-circle"></i>
+        <p>Si te interesa el voluntariado pro-bono, marca las habilidades que podrías aportar. Si no aplica, puedes dejar esta sección en blanco.</p>
+      </div>
+      <div class="check-group">
+        <label class="check-item"><input type="checkbox"><span class="check-label">Finanzas / Contabilidad / Emprendimiento</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Marketing / Comunicación / Diseño</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Tecnología / Sistemas / Programación</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Salud / Nutrición / Primeros Auxilios</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Educación / Capacitación / Mentoría</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Legal / Recursos Humanos / Administración</span></label>
+        <label class="check-item"><input type="checkbox"><span class="check-label">Otra habilidad (especificar abajo)</span></label>
+      </div>
+      <div class="field-row full" style="margin-top:12px;">
+        <div class="field">
+          <label>Detalla brevemente tu habilidad o experiencia (opcional)</label>
+          <textarea placeholder="Ej. Tengo 5 años de experiencia en finanzas personales y me gustaría impartir talleres de ahorro a familias…"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Disponibilidad -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-calendar"></i></div>
+        <h2>Disponibilidad</h2>
+      </div>
+      <p class="sub-label" style="margin-bottom:12px;">¿En qué momentos puedes participar en actividades?</p>
+      <div class="avail-grid">
+        <label class="avail-card"><input type="checkbox"><span>Sábados por la mañana</span></label>
+        <label class="avail-card"><input type="checkbox"><span>Sábados por la tarde</span></label>
+        <label class="avail-card"><input type="checkbox"><span>Domingos</span></label>
+        <label class="avail-card"><input type="checkbox"><span>Días de semana (tiempo laboral habilitado)</span></label>
+        <label class="avail-card"><input type="checkbox"><span>Feriados nacionales</span></label>
+        <label class="avail-card"><input type="checkbox"><span>Actividades virtuales (cualquier día)</span></label>
+      </div>
+    </div>
+
+    <!-- 6. Motivación -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-message-heart"></i></div>
+        <h2>Motivación y experiencia</h2>
+      </div>
+      <div class="field-row full" style="margin-bottom:12px;">
+        <div class="field">
+          <label>¿Por qué deseas ser voluntario/a de Espresso Americano? <span class="req">*</span></label>
+          <textarea placeholder="Cuéntanos qué te motiva a participar en este programa…" style="min-height:88px;" required></textarea>
+        </div>
+      </div>
+      <div class="field-row full" style="margin-bottom:14px;">
+        <div class="field">
+          <label>¿Tienes experiencia previa en voluntariado? Cuéntanos brevemente (opcional)</label>
+          <textarea placeholder="Ej. Participé en brigadas médicas con Cruz Roja durante 2022…"></textarea>
+        </div>
+      </div>
+      <p class="sub-label">¿Te interesaría asumir el rol de Líder de Actividad en alguna jornada?</p>
+      <div class="radio-group">
+        <label class="radio-pill"><input type="radio" name="lider" value="si"> Sí, me interesa</label>
+        <label class="radio-pill"><input type="radio" name="lider" value="futuro"> Quizás en el futuro</label>
+        <label class="radio-pill"><input type="radio" name="lider" value="no"> Por ahora, no</label>
+      </div>
+    </div>
+
+    <!-- 7. Contacto de emergencia -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-icon"><i class="ti ti-phone-call"></i></div>
+        <h2>Contacto de emergencia</h2>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" placeholder="Ej. Juan López" required>
+        </div>
+        <div class="field">
+          <label>Parentesco <span class="req">*</span></label>
+          <select required>
+            <option value="" disabled selected>Seleccionar</option>
+            <option>Cónyuge / Pareja</option>
+            <option>Madre / Padre</option>
+            <option>Hermano/a</option>
+            <option>Hijo/a</option>
+            <option>Amigo/a</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Teléfono de contacto <span class="req">*</span></label>
+          <input type="tel" placeholder="+504 9999-1111" required>
+        </div>
+        <div class="field">
+          <label>Condición médica relevante (opcional)</label>
+          <input type="text" placeholder="Ej. Alergia a penicilina, diabetes…">
+        </div>
+      </div>
+    </div>
+
+    <!-- Consentimiento -->
+    <div class="consent-block">
+      <input type="checkbox" id="consent" required>
+      <p>Confirmo que la información proporcionada es correcta y acepto participar voluntariamente en el Programa <strong>"Pasión en Acción"</strong> de Espresso Americano, cumpliendo los lineamientos de la política corporativa de voluntariado. Autorizo al Departamento de Comunicaciones y RSE a utilizar mi información para la gestión del programa y el uso de fotografías en actividades con fines de comunicación institucional.</p>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      <i class="ti ti-send"></i>
+      Enviar inscripción
+    </button>
+
+  </form>
+
+  <div id="success">
+    <div class="success-ring"><i class="ti ti-circle-check"></i></div>
+    <h2>¡Inscripción recibida!</h2>
+    <p>Gracias por unirte al programa <strong>Pasión en Acción</strong>.<br>El equipo de Comunicaciones y RSE se pondrá en contacto contigo próximamente con los detalles de las próximas actividades.<br><br>¡Juntos hacemos la diferencia! ☕</p>
+  </div>
+
+  <div class="page-footer">
+    <strong>Espresso Americano</strong> — Departamento de Comunicaciones y RSE<br>
+    Programa de Voluntariado Corporativo "Pasión en Acción" · 2025
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('vol-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
