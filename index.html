@@ -226,7 +226,7 @@
     </div>
   </div>
 
-  <form id="vol-form" novalidate>
+  <form id="vol-form" action="https://formspree.io/f/mqeodeja" method="POST" novalidate>
 
     <!-- 1. Datos personales -->
     <div class="section-card">
@@ -237,31 +237,31 @@
       <div class="field-row">
         <div class="field">
           <label>Nombres <span class="req">*</span></label>
-          <input type="text" id="nombres" placeholder="Ej. María José" required>
+          <input type="text" id="nombres" name="nombres" placeholder="Ej. María José" required>
         </div>
         <div class="field">
           <label>Apellidos <span class="req">*</span></label>
-          <input type="text" id="apellidos" placeholder="Ej. López Ramos" required>
+          <input type="text" id="apellidos" name="apellidos" placeholder="Ej. López Ramos" required>
         </div>
       </div>
       <div class="field-row">
         <div class="field">
           <label>Número de identidad / empleado <span class="req">*</span></label>
-          <input type="text" placeholder="Ej. 0801-1990-12345" required>
+          <input type="text" name="identidad" placeholder="Ej. 0801-1990-12345" required>
         </div>
         <div class="field">
           <label>Correo electrónico corporativo <span class="req">*</span></label>
-          <input type="email" placeholder="nombre@espressoamericano.com" required>
+          <input type="email" name="correo" placeholder="nombre@espressoamericano.com" required>
         </div>
       </div>
       <div class="field-row">
         <div class="field">
           <label>Teléfono / celular <span class="req">*</span></label>
-          <input type="tel" placeholder="+504 9999-0000" required>
+          <input type="tel" name="telefono" placeholder="+504 9999-0000" required>
         </div>
         <div class="field">
           <label>Talla de camisa <span class="req">*</span></label>
-          <select required>
+          <select name="talla" required>
             <option value="" disabled selected>Seleccionar talla</option>
             <option>XS</option><option>S</option><option>M</option>
             <option>L</option><option>XL</option><option>XXL</option>
@@ -279,7 +279,7 @@
       <div class="field-row">
         <div class="field">
           <label>Área / Departamento <span class="req">*</span></label>
-          <select required>
+          <select name="area" required>
             <option value="" disabled selected>Seleccionar área</option>
             <option>Comunicaciones y RSE</option>
             <option>Recursos Humanos</option>
@@ -294,17 +294,17 @@
         </div>
         <div class="field">
           <label>Puesto de trabajo <span class="req">*</span></label>
-          <input type="text" placeholder="Ej. Analista de Marketing" required>
+          <input type="text" name="puesto" placeholder="Ej. Analista de Marketing" required>
         </div>
       </div>
       <div class="field-row">
         <div class="field">
           <label>Tienda / Sede de trabajo <span class="req">*</span></label>
-          <input type="text" placeholder="Ej. Sede Central, Sucursal Mall Multiplaza" required>
+          <input type="text" name="sede" placeholder="Ej. Sede Central, Sucursal Mall Multiplaza" required>
         </div>
         <div class="field">
           <label>Nombre del supervisor directo <span class="req">*</span></label>
-          <input type="text" placeholder="Ej. Carlos Mendoza" required>
+          <input type="text" name="supervisor" placeholder="Ej. Carlos Mendoza" required>
         </div>
       </div>
     </div>
@@ -318,19 +318,19 @@
       <p class="sub-label" style="margin-bottom:12px;">Selecciona las áreas en las que te gustaría participar (puedes elegir varias).</p>
       <div class="check-group">
         <label class="check-item">
-          <input type="checkbox">
+          <input type="checkbox" name="area_interes" value="Salud">
           <div><div class="check-label">❤ Salud</div><div class="check-desc">Brigadas médicas, donación de sangre, concientización en salud y bienestar</div></div>
         </label>
         <label class="check-item">
-          <input type="checkbox">
+          <input type="checkbox" name="area_interes" value="Educacion">
           <div><div class="check-label">📚 Educación</div><div class="check-desc">Entrega de kits escolares, mejoras en infraestructura, charlas motivacionales</div></div>
         </label>
         <label class="check-item">
-          <input type="checkbox">
+          <input type="checkbox" name="area_interes" value="Medio Ambiente">
           <div><div class="check-label">🌿 Medio Ambiente</div><div class="check-desc">Reforestación, limpieza comunitaria, educación ambiental</div></div>
         </label>
         <label class="check-item">
-          <input type="checkbox">
+          <input type="checkbox" name="area_interes" value="Pro-Bono">
           <div><div class="check-label">💡 Voluntariado Pro-Bono</div><div class="check-desc">Aportar mis conocimientos y habilidades profesionales al servicio de la comunidad</div></div>
         </label>
       </div>
@@ -347,18 +347,18 @@
         <p>Si te interesa el voluntariado pro-bono, marca las habilidades que podrías aportar. Si no aplica, puedes dejar esta sección en blanco.</p>
       </div>
       <div class="check-group">
-        <label class="check-item"><input type="checkbox"><span class="check-label">Finanzas / Contabilidad / Emprendimiento</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Marketing / Comunicación / Diseño</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Tecnología / Sistemas / Programación</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Salud / Nutrición / Primeros Auxilios</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Educación / Capacitación / Mentoría</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Legal / Recursos Humanos / Administración</span></label>
-        <label class="check-item"><input type="checkbox"><span class="check-label">Otra habilidad (especificar abajo)</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Finanzas"><span class="check-label">Finanzas / Contabilidad / Emprendimiento</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Marketing"><span class="check-label">Marketing / Comunicación / Diseño</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Tecnologia"><span class="check-label">Tecnología / Sistemas / Programación</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Salud"><span class="check-label">Salud / Nutrición / Primeros Auxilios</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Educacion"><span class="check-label">Educación / Capacitación / Mentoría</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Legal"><span class="check-label">Legal / Recursos Humanos / Administración</span></label>
+        <label class="check-item"><input type="checkbox" name="habilidad_probono" value="Otra"><span class="check-label">Otra habilidad (especificar abajo)</span></label>
       </div>
       <div class="field-row full" style="margin-top:12px;">
         <div class="field">
           <label>Detalla brevemente tu habilidad o experiencia (opcional)</label>
-          <textarea placeholder="Ej. Tengo 5 años de experiencia en finanzas personales y me gustaría impartir talleres de ahorro a familias…"></textarea>
+          <textarea name="habilidades_detalle" placeholder="Ej. Tengo 5 años de experiencia en finanzas personales y me gustaría impartir talleres de ahorro a familias…"></textarea>
         </div>
       </div>
     </div>
@@ -371,12 +371,12 @@
       </div>
       <p class="sub-label" style="margin-bottom:12px;">¿En qué momentos puedes participar en actividades?</p>
       <div class="avail-grid">
-        <label class="avail-card"><input type="checkbox"><span>Sábados por la mañana</span></label>
-        <label class="avail-card"><input type="checkbox"><span>Sábados por la tarde</span></label>
-        <label class="avail-card"><input type="checkbox"><span>Domingos</span></label>
-        <label class="avail-card"><input type="checkbox"><span>Días de semana (tiempo laboral habilitado)</span></label>
-        <label class="avail-card"><input type="checkbox"><span>Feriados nacionales</span></label>
-        <label class="avail-card"><input type="checkbox"><span>Actividades virtuales (cualquier día)</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Sabados_manana"><span>Sábados por la mañana</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Sabados_tarde"><span>Sábados por la tarde</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Domingos"><span>Domingos</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Dias_semana"><span>Días de semana (tiempo laboral habilitado)</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Feriados"><span>Feriados nacionales</span></label>
+        <label class="avail-card"><input type="checkbox" name="disponibilidad" value="Virtual"><span>Actividades virtuales (cualquier día)</span></label>
       </div>
     </div>
 
@@ -389,20 +389,20 @@
       <div class="field-row full" style="margin-bottom:12px;">
         <div class="field">
           <label>¿Por qué deseas ser voluntario/a de Espresso Americano? <span class="req">*</span></label>
-          <textarea placeholder="Cuéntanos qué te motiva a participar en este programa…" style="min-height:88px;" required></textarea>
+          <textarea name="motivacion" placeholder="Cuéntanos qué te motiva a participar en este programa…" style="min-height:88px;" required></textarea>
         </div>
       </div>
       <div class="field-row full" style="margin-bottom:14px;">
         <div class="field">
           <label>¿Tienes experiencia previa en voluntariado? Cuéntanos brevemente (opcional)</label>
-          <textarea placeholder="Ej. Participé en brigadas médicas con Cruz Roja durante 2022…"></textarea>
+          <textarea name="experiencia_previa" placeholder="Ej. Participé en brigadas médicas con Cruz Roja durante 2022…"></textarea>
         </div>
       </div>
       <p class="sub-label">¿Te interesaría asumir el rol de Líder de Actividad en alguna jornada?</p>
       <div class="radio-group">
-        <label class="radio-pill"><input type="radio" name="lider" value="si"> Sí, me interesa</label>
-        <label class="radio-pill"><input type="radio" name="lider" value="futuro"> Quizás en el futuro</label>
-        <label class="radio-pill"><input type="radio" name="lider" value="no"> Por ahora, no</label>
+        <label class="radio-pill"><input type="radio" name="lider_actividad" value="si"> Sí, me interesa</label>
+        <label class="radio-pill"><input type="radio" name="lider_actividad" value="futuro"> Quizás en el futuro</label>
+        <label class="radio-pill"><input type="radio" name="lider_actividad" value="no"> Por ahora, no</label>
       </div>
     </div>
 
@@ -415,11 +415,11 @@
       <div class="field-row">
         <div class="field">
           <label>Nombre completo <span class="req">*</span></label>
-          <input type="text" placeholder="Ej. Juan López" required>
+          <input type="text" name="emergencia_nombre" placeholder="Ej. Juan López" required>
         </div>
         <div class="field">
           <label>Parentesco <span class="req">*</span></label>
-          <select required>
+          <select name="emergencia_parentesco" required>
             <option value="" disabled selected>Seleccionar</option>
             <option>Cónyuge / Pareja</option>
             <option>Madre / Padre</option>
@@ -433,11 +433,11 @@
       <div class="field-row">
         <div class="field">
           <label>Teléfono de contacto <span class="req">*</span></label>
-          <input type="tel" placeholder="+504 9999-1111" required>
+          <input type="tel" name="emergencia_telefono" placeholder="+504 9999-1111" required>
         </div>
         <div class="field">
           <label>Condición médica relevante (opcional)</label>
-          <input type="text" placeholder="Ej. Alergia a penicilina, diabetes…">
+          <input type="text" name="condicion_medica" placeholder="Ej. Alergia a penicilina, diabetes…">
         </div>
       </div>
     </div>
@@ -469,11 +469,28 @@
 </div>
 
 <script>
-  document.getElementById('vol-form').addEventListener('submit', function(e) {
+  document.getElementById('vol-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const form = this;
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    const response = await fetch('https://formspree.io/f/mqeodeja', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      btn.textContent = 'Error al enviar. Intenta de nuevo.';
+      btn.disabled = false;
+    }
   });
 </script>
 
